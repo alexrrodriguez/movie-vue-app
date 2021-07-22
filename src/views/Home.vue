@@ -63,14 +63,14 @@ export default {
   },
   methods: {
     indexMovies: function () {
-      axios.get("http://localhost:3000/movies").then((response) => {
+      axios.get("/movies").then((response) => {
         this.movies = response.data;
         console.log("Movies:", this.movies);
       });
     },
     createMovie: function () {
       axios
-        .post("http://localhost:3000/movies", this.newMovieParams)
+        .post("/movies", this.newMovieParams)
         .then((response) => {
           console.log("Success!", response);
           this.movies.push(response.data);
@@ -87,7 +87,7 @@ export default {
     updateMovie: function (movie) {
       var editMovieParams = movie;
       axios
-        .patch("http://localhost:3000/movies/" + movie.id, editMovieParams)
+        .patch("/movies/" + movie.id, editMovieParams)
         .then((response) => {
           console.log("movies update", response);
           this.currentMovie = {};
@@ -97,7 +97,7 @@ export default {
         });
     },
     destroyMovie: function (movie) {
-      axios.delete("http://localhost:3000/movies/" + movie.id).then((response) => {
+      axios.delete("/movies/" + movie.id).then((response) => {
         console.log("movie deleted", response);
         var index = this.movies.indexOf(movie);
         this.movies.splice(index, 1);
