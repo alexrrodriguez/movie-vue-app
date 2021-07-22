@@ -1,12 +1,49 @@
 <template>
   <div class="home">
     <h2>Add a Movie!</h2>
-    <button v-on:click="createMovie()">Create Movie</button>
+    <div>
+      Title:
+      <input type="text" v-model="newMovieParams.title" />
+      Year:
+      <input type="text" v-model="newMovieParams.year" />
+      Plot:
+      <input type="text" v-model="newMovieParams.plot" />
+      Director:
+      <input type="text" v-model="newMovieParams.director" />
+      <button v-on:click="createMovie()">Create Movie</button>
+    </div>
     <h1>{{ message }}</h1>
     <div v-for="movie in movies" :key="movie.id">
       <h2>Title: {{ movie.title }}</h2>
+      <h2>Year: {{ movie.year }}</h2>
       <h2>Plot: {{ movie.plot }}</h2>
+      <h2>Director: {{ movie.director }}</h2>
+      <button v-on:click="showMovie(movie)">More Info</button>
     </div>
+    <dialog id="movie-details">
+      <form method="dialog">
+        <h1>Movie Info</h1>
+        <p>
+          Title:
+          <input type="text" v-model="currentMovie.title" />
+        </p>
+        <p>
+          Year:
+          <input type="text" v-model="currentMovie.year" />
+        </p>
+        <p>
+          Plot:
+          <input type="text" v-model="currentMovie.plot" />
+        </p>
+        <p>
+          Director:
+          <input type="text" v-model="currentMovie.director" />
+        </p>
+        <button v-on:click="updateMovie(currentMovie)">Update</button>
+        <button v-on:click="destroyMovie(currentMovie)">Delete</button>
+        <button>Close</button>
+      </form>
+    </dialog>
   </div>
 </template>
 <style></style>
@@ -17,6 +54,8 @@ export default {
     return {
       message: "Here are some movies!",
       movies: [],
+      newMovieParams: {},
+      currentMovie: {},
     };
   },
   created: function () {
@@ -30,21 +69,39 @@ export default {
       });
     },
     createMovie: function () {
-      console.log("added movie!");
-      var params = {
-        title: "Ant Man",
-        year: 2015,
-        plot: "Forced out of his own company by former protégé Darren Cross, Dr. Hank Pym (Michael Douglas) recruits the talents of Scott Lang (Paul Rudd), a master thief just released from prison. Lang becomes Ant-Man, trained by Pym and armed with a suit that allows him to shrink in size, possess superhuman strength and control an army of ants.",
-        director: "Peyton Reed",
-        english: true,
-      };
       axios
-        .post("http://localhost:3000/movies", params)
+        .post("http://localhost:3000/movies", this.newMovieParams)
         .then((response) => {
-          console.log("Success!", response.data);
+          console.log("Success!", response);
           this.movies.push(response.data);
+          this.newMovieParams = {};
         })
-        .catch((error) => console.log(error.response));
+        .catch((error) => {
+          console.log("movie create error", error.response);
+        });
+    },
+    showMovie: function (movie) {
+      this.currentMovie = movie;
+      document.querySelector("#movie-details").showModal();
+    },
+    updateMovie: function (movie) {
+      var editMovieParams = movie;
+      axios
+        .patch("http://localhost:3000/movies/" + movie.id, editMovieParams)
+        .then((response) => {
+          console.log("movies update", response);
+          this.currentMovie = {};
+        })
+        .catch((error) => {
+          console.log("movies update error", error.response);
+        });
+    },
+    destroyMovie: function (movie) {
+      axios.delete("http://localhost:3000/movies/" + movie.id).then((response) => {
+        console.log("movie deleted", response);
+        var index = this.movies.indexOf(movie);
+        this.movies.splice(index, 1);
+      });
     },
   },
 };
