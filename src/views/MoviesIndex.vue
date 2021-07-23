@@ -6,6 +6,7 @@
       <p>{{ movie.director }}</p>
       <p>{{ movie.year }}</p>
       <p>{{ movie.plot }}</p>
+      <router-link v-bind:to="`/movies/${movie.id}`">More Info</router-link>
     </div>
   </div>
 </template>
