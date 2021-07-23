@@ -12,6 +12,8 @@
       <router-link to="/logout">Logout</router-link>
       |
       <router-link to="/movies">All Movies</router-link>
+      |
+      <router-link to="/movies/new">New Movie</router-link>
     </div>
     <router-view />
   </div>
