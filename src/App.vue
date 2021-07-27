@@ -17,13 +17,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/movies">
               All Movies
               <span class="sr-only"></span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">New Movie</a>
+            <a class="nav-link" href="/movies/new">New Movie</a>
           </li>
           <li class="nav-item dropdown">
             <a
