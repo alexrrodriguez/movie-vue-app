@@ -2,9 +2,9 @@
   <div class="movies-index">
     <h1>All Movies</h1>
     <div v-for="movie in movies" v-bind:key="movie.id">
-      <h2>{{ movie.title }}</h2>
-      <p>{{ movie.director }}</p>
-      <p>{{ movie.year }}</p>
+      <h2 style="background-color: Violet">{{ movie.title }}</h2>
+      <p style="border: 2px solid Violet">{{ movie.director }}</p>
+      <p style="color: Tomato">{{ movie.year }}</p>
       <p>{{ movie.plot }}</p>
       <router-link v-bind:to="`/movies/${movie.id}`">More Info</router-link>
     </div>

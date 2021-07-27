@@ -1,8 +1,8 @@
 <template>
   <div class="movies-show">
-    <h2>{{ movie.title }}</h2>
-    <p>{{ movie.director }}</p>
-    <p>{{ movie.year }}</p>
+    <h2 style="background-color: Violet">{{ movie.title }}</h2>
+    <p style="border: 2px solid Violet">{{ movie.director }}</p>
+    <p style="color: Tomato">{{ movie.year }}</p>
     <p>{{ movie.plot }}</p>
     <router-link v-bind:to="`/movies/${movie.id}/edit`">Edit Movie</router-link>
     |

@@ -14,10 +14,10 @@
     </div>
     <h1>{{ message }}</h1>
     <div v-for="movie in movies" :key="movie.id">
-      <h2>Title: {{ movie.title }}</h2>
-      <h2>Year: {{ movie.year }}</h2>
+      <h2 style="background-color: Violet">Title: {{ movie.title }}</h2>
+      <h2 style="border: 2px solid Violet">Year: {{ movie.year }}</h2>
+      <h2 style="color: Tomato">Director: {{ movie.director }}</h2>
       <h2>Plot: {{ movie.plot }}</h2>
-      <h2>Director: {{ movie.director }}</h2>
       <button v-on:click="showMovie(movie)">More Info</button>
     </div>
     <dialog id="movie-details">

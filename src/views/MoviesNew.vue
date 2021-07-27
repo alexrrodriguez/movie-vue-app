@@ -1,6 +1,6 @@
 <template>
   <div class="movies-new">
-    <h1>New Movie</h1>
+    <h1 style="background-color: Violet">New Movie</h1>
     <form v-on:submit.prevent="createMovie()">
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
