@@ -1,6 +1,22 @@
 <template>
   <div class="movies-show">
-    <h2 style="background-color: Violet">{{ movie.title }}</h2>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">{{ movie.title }} - {{ movie.year }}</h2>
+            <h5>{{ movie.director }}</h5>
+            <p class="card-text">{{ movie.plot }}</p>
+            <router-link v-bind:to="`/movies/${movie.id}/edit`">Edit Movie</router-link>
+            |
+            <button v-on:click="destroyMovie(movie)">Delete Movie</button>
+            |
+            <router-link to="/movies">Back to all Movies</router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <h2 style="background-color: Violet">{{ movie.title }}</h2>
     <p style="border: 2px solid Violet">{{ movie.director }}</p>
     <p style="color: Tomato">{{ movie.year }}</p>
     <p>{{ movie.plot }}</p>
@@ -8,7 +24,7 @@
     |
     <button v-on:click="destroyMovie(movie)">Delete Movie</button>
     |
-    <router-link to="/movies">Back to all Movies</router-link>
+    <router-link to="/movies">Back to all Movies</router-link> -->
   </div>
 </template>
 
