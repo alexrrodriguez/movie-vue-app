@@ -11,7 +11,7 @@
             <p>Gender: {{ actor.gender }}</p>
             <p>Age: {{ actor.age }}</p>
             <p>Known For: {{ actor.known_for }}</p>
-            <router-link v-bind:to="`/actors/${actor.id}`">More details</router-link>
+            <router-link class="btn btn-primary" v-bind:to="`/actors/${actor.id}`">More details</router-link>
           </div>
         </div>
       </div>

@@ -19,7 +19,8 @@
       <input type="text" v-model="actor.movie_id" />
       Image:
       <input type="text" v-model="actor.image" />
-      <input type="submit" value="Update" />
+      |
+      <input class="btn btn-primary" type="submit" value="Update" />
     </form>
   </div>
 </template>
