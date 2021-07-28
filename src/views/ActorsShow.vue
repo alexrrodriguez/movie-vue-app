@@ -7,6 +7,8 @@
     <p>Known For: {{ actor.known_for }}</p>
     <router-link v-bind:to="`/actors/${actor.id}/edit`">Edit Actor</router-link>
     |
+    <button v-on:click="destroyActor(actor)">Delete Actor</button>
+    |
     <router-link to="/actors">Back to all Actors</router-link>
   </div>
 </template>
@@ -25,6 +27,13 @@ export default {
       this.actor = response.data;
     });
   },
-  methods: {},
+  methods: {
+    destroyActor: function (actor) {
+      axios.delete("/actors/" + actor.id).then((response) => {
+        console.log("actors destroy", response);
+        this.$router.push("/actors");
+      });
+    },
+  },
 };
 </script>
