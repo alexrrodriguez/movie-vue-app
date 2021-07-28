@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Movie App</a>
+      <a class="navbar-brand" href="/movies">Movie App</a>
       <button
         class="navbar-toggler"
         type="button"

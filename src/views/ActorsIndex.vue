@@ -1,13 +1,28 @@
 <template>
   <div class="actos-index">
     <h1 style="color: Tomato">All Actors</h1>
-    <div v-for="actor in actors" v-bind:key="actor.id">
+    <div class="row" v-for="actor in actors" v-bind:key="actor.id">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">{{ actor.first_name }} {{ actor.last_name }}</h2>
+            <img v-bind:src="actor.image" v-bind:alt="actor.last_name" />
+            <p>Gender: {{ actor.gender }}</p>
+            <p>Age: {{ actor.age }}</p>
+            <p>Known For: {{ actor.known_for }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    <!-- <div v-for="actor in actors" v-bind:key="actor.id">
       <h2>{{ actor.first_name }} {{ actor.last_name }}</h2>
       <img v-bind:src="actor.image" v-bind:alt="actor.last_name" />
       <p>Gender: {{ actor.gender }}</p>
       <p>Age: {{ actor.age }}</p>
       <p>Known For: {{ actor.known_for }}</p>
-    </div>
+    </div> -->
   </div>
 </template>
 

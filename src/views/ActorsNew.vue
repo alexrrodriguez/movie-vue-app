@@ -1,6 +1,6 @@
 <template>
   <div class="actor-new">
-    <h1>New Actor</h1>
+    <h1 style="color: Tomato">New Actor</h1>
     <form v-on:submit.prevent="createActor()">
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
@@ -89,9 +89,7 @@
       <input type="text" v-model="newActorParams.image" />
       Movie-ID:
       <input type="text" v-model="newActorParams.movie_id" /> -->
-      |
       <input class="btn btn-primary" type="submit" value="Submit" />
-      |
     </form>
   </div>
 </template>
