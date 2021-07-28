@@ -1,6 +1,6 @@
 <template>
   <div class="actos-index">
-    <h1>All Actors</h1>
+    <h1 style="color: Tomato">All Actors</h1>
     <div v-for="actor in actors" v-bind:key="actor.id">
       <h2>{{ actor.first_name }} {{ actor.last_name }}</h2>
       <img v-bind:src="actor.image" v-bind:alt="actor.last_name" />

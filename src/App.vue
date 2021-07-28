@@ -26,7 +26,7 @@
             <a class="nav-link" href="/actors">All Actors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/movies/new">New Actor</a>
+            <a class="nav-link" href="/actors/new">New Actor</a>
           </li>
           <li class="nav-item dropdown">
             <a
