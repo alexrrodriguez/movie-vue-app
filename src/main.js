@@ -4,6 +4,8 @@ import router from "./router";
 import axios from "axios";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+// import "materialize-css/dist/css/materialize.min.css";
+// import "material-design-icons/iconfont/material-icons.css";
 
 axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/";
 
