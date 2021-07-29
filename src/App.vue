@@ -51,10 +51,10 @@
               Login/Logout
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/signup">Signup!</a>
-              <a class="dropdown-item" href="/login">Login</a>
+              <a v-if="!isLoggedIn()" class="dropdown-item" href="/signup">Signup!</a>
+              <a v-if="!isLoggedIn()" class="dropdown-item" href="/login">Login</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/logout">Logout</a>
+              <a v-if="isLoggedIn()" class="dropdown-item" href="/logout">Logout</a>
             </div>
           </li>
         </ul>
@@ -109,3 +109,17 @@ body {
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
