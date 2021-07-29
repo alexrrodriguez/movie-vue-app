@@ -28,6 +28,7 @@
           cols="20"
           rows="5"
         ></textarea>
+
         <!-- <input
           type="text"
           v-model="newMovieParams.director"
@@ -36,6 +37,7 @@
           aria-describedby="inputGroup-sizing-default"
         /> -->
       </div>
+      <small v-if="newMovieParams.plot.length > 400" class="text-danger">Characters must not exceed 400</small>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Year:</span>
         <input
@@ -74,7 +76,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newMovieParams: {},
+      newMovieParams: { plot: "" },
       errors: [],
     };
   },
