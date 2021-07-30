@@ -1,7 +1,9 @@
 <template>
   <div class="movies-index">
     <h1 style="color: Tomato">All Movies</h1>
-    <div class="row" v-for="movie in movies" v-bind:key="movie.id">
+    Search:
+    <input type="text" v-model="search" />
+    <div class="row" v-for="movie in filterBy(movies, search, 'title')" v-bind:key="movie.id">
       <div class="col-sm-2"></div>
       <div class="col-sm-8">
         <div class="card">
@@ -13,7 +15,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="col-sm-4"></div> -->
     </div>
     <!-- <div v-for="movie in movies" v-bind:key="movie.id">
       <h2 style="background-color: Violet">{{ movie.title }}</h2>
@@ -26,13 +27,20 @@
 </template>
 
 <script>
+import Vue from "vue";
+import Vue2Filters from "vue2-filters";
+
+Vue.use(Vue2Filters);
+
 import axios from "axios";
 export default {
   data: function () {
     return {
       movies: [],
+      search: "",
     };
   },
+  mixins: [Vue2Filters.mixin],
   created: function () {
     this.indexMovies();
   },
