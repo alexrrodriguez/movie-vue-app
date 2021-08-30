@@ -3,6 +3,7 @@
     <h1 style="color: Tomato">All Movies</h1>
     Search:
     <input type="text" v-model="search" />
+    <hr />
     <div class="row" v-for="movie in filterBy(movies, search, 'title')" v-bind:key="movie.id">
       <div class="col-sm-2"></div>
       <div class="col-sm-8">

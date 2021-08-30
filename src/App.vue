@@ -11,7 +11,7 @@
       </div>
     </nav> -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/movies">Movie App</a>
+      <a class="navbar-brand" href="/">Movie App</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/movies">All Movies</a>
+            <a class="nav-link" href="/">All Movies</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/movies/new">New Movie</a>

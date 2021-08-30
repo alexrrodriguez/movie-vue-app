@@ -26,7 +26,12 @@
     </div> -->
   </div>
 </template>
-
+<style scoped>
+img {
+  max-height: 400px;
+  max-width: 400px;
+}
+</style>
 <script>
 import axios from "axios";
 export default {
