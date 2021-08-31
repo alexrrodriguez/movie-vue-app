@@ -28,8 +28,8 @@
 </template>
 <style scoped>
 img {
-  max-height: 400px;
-  max-width: 400px;
+  max-height: 300px;
+  max-width: 300px;
 }
 </style>
 <script>
