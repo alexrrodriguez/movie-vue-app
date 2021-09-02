@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <atom-spinner :animation-duration="1000" :size="60" :color="'#ff1d5e'" /> -->
     <!-- <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Logo</a>
@@ -111,7 +112,12 @@ body {
 </style>
 
 <script>
+// import { AtomSpinner } from "epic-spinners";
+
 export default {
+  // components: {
+  //   AtomSpinner,
+  // },
   methods: {
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {

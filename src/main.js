@@ -5,6 +5,13 @@ import axios from "axios";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Vue2Filters from "vue2-filters";
+import PulseLoader from "vue-spinner/src/PulseLoader.vue";
+
+new Vue({
+  components: {
+    PulseLoader,
+  },
+});
 
 Vue.use(Vue2Filters);
 

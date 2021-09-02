@@ -1,6 +1,8 @@
 <template>
   <div class="actor-new">
+    <br />
     <h1 style="color: Tomato">New Actor</h1>
+    <hr />
     <form v-on:submit.prevent="createActor()">
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>

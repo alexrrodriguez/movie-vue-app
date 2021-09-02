@@ -1,5 +1,6 @@
 <template>
   <div class="movies-index">
+    <br />
     <h1 style="color: Tomato">All Movies</h1>
     Search:
     <input type="text" v-model="search" />
@@ -9,9 +10,13 @@
       <div class="col-sm-8">
         <div class="card">
           <div class="card-body">
-            <h2 class="card-title">{{ movie.title }} - {{ movie.year }}</h2>
+            <h2 class="card-title">{{ movie.title }}</h2>
+            <h3>{{ movie.year }}</h3>
             <h5>{{ movie.director }}</h5>
-            <p class="card-text">{{ movie.plot }}</p>
+            <p>Plot:</p>
+            <p class="card-text">
+              <i>{{ movie.plot }}</i>
+            </p>
             <router-link class="btn btn-primary" v-bind:to="`/movies/${movie.id}`">More Info</router-link>
           </div>
         </div>
